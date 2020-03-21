@@ -42,8 +42,16 @@ def valid_proof(last_hash, proof):
     IE:  last_hash: ...AE9123456, new hash 123456E88...
     """
 
-    # TODO: Your code here!
-    pass
+    # format proof into byte literal
+    previous_proof_encoded = f'{last_hash}'.encode()
+    new_proof_encoded = f'{proof}'.encode()
+
+    # hash byte literals
+    previous_proof_hashed = hashlib.sha256(previous_proof_encoded).hexdigest()[-6:]
+    new_proof_hashed = hashlib.sha256(new_proof_encoded).hexdigest()[:6]
+
+    # compare hash nonces
+    return previous_proof_hashed == new_proof_hashed
 
 
 if __name__ == '__main__':
