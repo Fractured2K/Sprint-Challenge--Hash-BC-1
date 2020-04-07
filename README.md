@@ -26,7 +26,13 @@ Explain in detail the workings of a dynamic array:
 
 Q: What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
 
-- A: Arrays are the most time and space efficient data structure, with a O(1) or constant time to access items inside an array. The reason arrays are O(1) is because computers can do arithmetic operations very fast and to access and array you use a simple forumla composed of arithmetics operations `index * sizeof(type) + start_address`. Adding to the beginning on array is O(n) or linear time as you'll need to move each element down one, and if theres no space you'll also need to resize the array. Removing items from an array is O(n) or linear time as you'll need to remove the item and move over the rest of the elements. Inserting at the end of the array can be best O(1) or constant time if it has room, but average of O(n) as you'll need to resize the array.
+- A: Arrays are the most time and space efficient data structure, with a O(1) or constant time to access items inside an array. Under the hood arrays use a simple forumla composed of arithmetics operations `index * sizeof(type) + start_address`, computers can process this formula very very quickly as it's simple arithmetics hence the reason as to why arrays are O(1) to access items. 
+
+- Adding to the beginning of an array is O(n) or linear time as you'll need to move each element down one, and if theres no space you'll also need to resize the array. 
+
+- Removing items from an array is O(n) or linear time as you'll need to remove the item and move over the rest of the elements. 
+
+- Inserting at the end of the array can be best O(1) or constant time if it has room, but average of O(n) as you'll need to resize the array.
 
 Q: What is the worse case scenario if you try to extend the storage size of a dynamic array?
 
@@ -40,13 +46,12 @@ Q: Explain how proof of work functions. How does it operate. How does this prote
 
 - Proof of work is a consensus algorithm that is used to deter DDOS attacks and other attacks such as spam on a network by requiring some work from the requesting client (typically mathematical puzzles), also known as a CPU cost function. POW protects the blockchain when adding new blocks or performing transaction by allowing other miners or nodes on the network to validate the proof of work by comparing hash nonces. However proof of work doesn't eliminate all attacks as the blockchain is still susceptible to 51% Attacks. My favorite definition of a 51% attack comes from binance (a crypto exchange).
 
-      	```
+      	
       	A 51% attack is a potential attack on a blockchain network, where a single entity or organization is able to control the majority of the hash rate, potentially causing a network disruption. In such a scenario, the attacker would have enough mining power to intentionally exclude or modify the ordering of transactions. They could also reverse transactions they made while being in control - leading to a double-spending problem.
 
       	A successful majority attack would also allow the attacker to prevent some or all transactions from being confirmed (transaction denial of service) or to prevent some or all other miners from mining, resulting in what is known as mining monopoly.
 
       	On the other hand, a majority attack would not allow the attacker to reverse transactions from other users nor to prevent transactions from being created and broadcasted to the network. Changing the block’s reward, creating coins out of thin air or stealing coins that never belonged to the attacker are also deemed as impossible events.
-      	```
 
 ## Project Set Up
 
